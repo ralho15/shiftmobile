@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>The  Shift 2018 Official App</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+    </style>
+
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/shift-styles.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">-->
+	<link rel="stylesheet" href="css/basic.css">
+	<style>
+		::-webkit-scrollbar {
+			display:none;
+		}
+	</style>
+</head>
+
+<body>
+<div class="wrapper">
+    <div id="content">
+	    
+		
+		
+    </div>
+	
+	<div id="MenuBar">
+		<nav class="BottomNav">
+			<div class="navbtn bHome" onclick="location.href='home.html'"></div>
+			<div class="navbtn bMap" onclick="location.href='map.html'"></div>
+			<div class="navbtn bSch" onclick="location.href='schedule.html'"></div>
+			<div class="navbtn bMatch" onclick="location.href='matchmaking.html'"></div>
+			<div class="navbtn bInfo" onclick="location.href='info.html'"></div>
+        </nav>
+	</div>
+	
+</div>
+
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mobile-events.min.js"></script>
+</script>
+</body>
+</html>
