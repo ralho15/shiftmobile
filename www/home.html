@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <title>Shift</title>
+      <style>
+		::-webkit-scrollbar {
+			display:none;
+		}
+      </style>
+    </head>
+    <body>
+          <div class="top">
+            <div class="welcome">
+              Come to
+              <br>join us in Turku!
+            </div>
+            
+          </div>
+        
+          <div class="middle">
+            <h1>Today's Highlights</h1>
+            <div class="highlightmenu">
+                <button class="high_event" id="high_1"></button>
+                <button class="high_event" id="high_2"></button>
+                <button class="high_event" id="high_3"></button>
+                <button class="high_event" id="high_4"></button>
+            </div>
+          </div>
+      
+          <div class="bottom">
+            <h1>Recommended for you</h1>
+            <div class="recommend">
+                <button class="rec_event" id="rec1"></button>
+              
+                <button class="event_text" id="text1">
+                    <div>
+                      <div class="firstText">King's hall</div>
+                      <div class="secondText">Illustration<br>art</div>
+                      <div class="thirdText">10:00 - 11:00</div>
+                    </div> 
+                </button>
+              
+                <button class="rec_event" id="rec2">
+                </button>
+              
+                <button class="event_text" id="text2">
+                    <div>
+                      <div class="firstText">King's hall</div>
+                      <div class="secondText">Illustration<br>art</div>
+                      <div class="thirdText">10:00 - 11:00</div>
+                    </div> 
+                </button>
+              
+                <button class="rec_event" id="rec3"></button>
+              
+                <button class="event_text" id="text3">
+                    <div>
+                        <div class="firstText">King's hall</div>
+                        <div class="secondText">Illustration<br>art</div>
+                        <div class="thirdText">10:00 - 11:00</div>
+                    </div> 
+                </button>
+              
+                <button class="rec_event" id="rec4"></button>  
+              
+                <button class="event_text" id="text4">
+                     <div>
+                        <div class="firstText">King's hall</div>
+                        <div class="secondText">Illustration<br>art</div>
+                        <div class="thirdText">10:00 - 11:00</div>
+                    </div> 
+                </button>
+            </div>
+          </div>
+          <div id="MenuBar">
+                  <nav class="BottomNav">
+                     <div class="navbtn bHome" onclick="location.href='home.html'"></div>
+                     <div class="navbtn bMap" onclick="location.href='map.html'"></div>
+                     <div class="navbtn bSch" onclick="location.href='schedule.html'"></div>
+                     <div class="navbtn bMatch" onclick="location.href='matchmaking.html'"></div>
+                     <div class="navbtn bInfo" onclick="location.href='info.html'"></div>
+                  </nav>
+          </div>
+    </body>
+  
+    <script>
+      document.getElementById("").onclick = function () {
+      location.href = "";
+      };
+    </script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</html>
