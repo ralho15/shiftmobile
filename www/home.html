@@ -32,12 +32,8 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/home.css">
+		<link rel="stylesheet" type="text/css" href="css/basic.css">
         <title>Shift</title>
-      <style>
-		::-webkit-scrollbar {
-			display:none;
-		}
-      </style>
     </head>
     <body>
           <div class="top">
@@ -103,21 +99,26 @@
                 </button>
             </div>
           </div>
-          <div id="MenuBar">
-                  <nav class="BottomNav">
-                     <div class="navbtn bHome" onclick="location.href='home.html'"></div>
-                     <div class="navbtn bMap" onclick="location.href='map.html'"></div>
-                     <div class="navbtn bSch" onclick="location.href='schedule.html'"></div>
-                     <div class="navbtn bMatch" onclick="location.href='matchmaking.html'"></div>
-                     <div class="navbtn bInfo" onclick="location.href='info.html'"></div>
-                  </nav>
-          </div>
+          <div class="backbtn" onclick="goBack(this)" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='transparent'"></div>
+	<div id="MenuBar">
+		<nav class="BottomNav">
+			<div class="navbtn bHome" onclick="location.href='home.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+			<div class="navbtn bMap" onclick="location.href='map.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+			<div class="navbtn bSch" onclick="location.href='schedule.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+			<div class="navbtn bMatch" onclick="location.href='matchmaking.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+			<div class="navbtn bInfo" onclick="location.href='info.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+        </nav>
+	</div>
     </body>
   
     <script>
       document.getElementById("").onclick = function () {
       location.href = "";
       };
+	  
+	  function goBack(item){
+	window.history.back();
+}
     </script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>

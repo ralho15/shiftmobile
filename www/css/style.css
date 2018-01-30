@@ -1,3 +1,17 @@
+@font-face {
+font-family: GlacialIndifferenceBold;
+src: url(../font/GlacialIndifference-Bold.otf);
+}
+
+@font-face {
+font-family: GlacialIndifferenceRegular;
+src: url(../font/GlacialIndifference-Regular.otf);
+}
+
+@font-face {
+font-family: GlacialIndifferenceItalic;
+src: url(../font/GlacialIndifference-Italic.otf);
+}
 #infoHead{
 	font-family: 'GlacialIndifferenceRegular';
 	font-weight: bold;
@@ -36,87 +50,11 @@
 	width: auto;
 	margin-top: 20px;
 }
-
-
-
 @font-face {
   font-family: 'GlacialIndifference';
   src: url('../fonts/GlacialIndifference-Regular.otf') format('opentype');
 }
-::-webkit-scrollbar {
-			display:none;
-		}
-#content{
-	position: absolute;
-	top:0;
-	left: 0;
-    width: 100vw;
-    min-height: 100vh;
-    margin:0;
-    padding:0;
-	overflow: hidden;
-}
-#MenuBar{
-	position: absolute;
-	bottom:0;
-	left: 0;
-    width: 100vw;
-    min-height: 5vh;
-    margin:0;
-    padding:0;
-	overflow: hidden;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: gray;
-}
-.navbtn{
-	float: left;
-	background-color: gray;
-	bottom:0;
-    width: 20vw;
-    min-height: 8vh;
-    margin:0;
-    padding:0;
-	overflow: hidden;
-	text-align: center;
-}
-.bHome{
-	background:url(../img/icons8-home-50.png);
-	background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-}
-.bMap{
-	background:url(../img/icons8-marker-50.png);
-	background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-}
-.bSch{
-	background:url(../img/icons8-schedule-50.png);
-	background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-}
-.bMatch{
-	background:url(../img/icons8-contacts-50.png);
-	background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-}
-.bInfo{
-	background:url(../img/icons8-info-50.png);
-	background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-}
-html,
-body {
-    font-family: 'GlacialIndifference', Fallback, sans-serif;
-    min-height: 100vh;
-    min-width: 100%;
-    overflow: hidden;
-}
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     font-family: 'GlacialIndifference', Fallback, sans-serif;
     font-size: 6vw;

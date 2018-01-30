@@ -16,7 +16,7 @@
 	overflow: hidden;
 }
 #MenuBar{
-	position: absolute;
+	position: fixed;
 	bottom:0;
 	left: 0;
     width: 100vw;
@@ -27,32 +27,48 @@
 	border-top-style: solid;
 	border-top-width: 1px;
 	border-top-color: gray;
+	background-color: white;
+}
+.backbtn{
+	position: absolute;
+	top:5px;
+	left:10px;
+	width:10vw;
+	min-height:5vh;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	border:none;
+	background:url(../img/icons/icons8-back-50.png);
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 .navbtn{
 	float: left;
 	background-color: gray;
 	bottom:0;
     width: 20vw;
-    min-height: 8vh;
+    min-height: 7vh;
     margin:0;
     padding:0;
 	overflow: hidden;
 	text-align: center;
 }
 .bHome{
-	background:url(../img/icons8-home-50.png);
+	background:url(../img/icons/grid.svg);
 	background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: contain;
 }
 .bMap{
-	background:url(../img/icons8-marker-50.png);
+	background:url(../img/icons/placeholder.svg);
 	background-repeat: no-repeat;
     background-position: top;
     background-size: contain;
 }
 .bSch{
-	background:url(../img/icons8-schedule-50.png);
+	background:url(../img/icons/small-calendar.svg);
 	background-repeat: no-repeat;
     background-position: top;
     background-size: contain;
@@ -64,7 +80,7 @@
     background-size: contain;
 }
 .bInfo{
-	background:url(../img/icons8-info-50.png);
+	background:url(../img/icons/info-button.svg);
 	background-repeat: no-repeat;
     background-position: top;
     background-size: contain;
@@ -72,30 +88,7 @@
 html,
 body {
     font-family: 'GlacialIndifference', Fallback, sans-serif;
-    min-height: 100vh;
+    min-height: 100%;
     min-width: 100%;
-    overflow: hidden;
 }
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    font-family: 'GlacialIndifference', Fallback, sans-serif;
-    font-size: 6vw;
-	color: #370c2c;
-	margin: 0.5vh 0;
-}
-.h1, .h2, h1, h2{
-    font-family: 'GlacialIndifference', Fallback, sans-serif;
-    font-size: 7vw;
-}
-.h5, h5 {
-	font-size: 4.5vw;
-}
-#paragraph p{
-	text-align: justify;
-	margin: 3vh 4vw;
-}
-.p, .span, .input, p, span, input, div {
-    font-family: 'GlacialIndifference', Fallback, sans-serif;
-    font-size: 3.5vw;
-    font-weight: 500;
-	color: #370c2c;
-}
+

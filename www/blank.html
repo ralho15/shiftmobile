@@ -23,11 +23,6 @@
     <link rel="stylesheet" href="css/shift-styles.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">-->
 	<link rel="stylesheet" href="css/basic.css">
-	<style>
-		::-webkit-scrollbar {
-			display:none;
-		}
-	</style>
 </head>
 
 <body>
@@ -37,14 +32,14 @@
 		
 		
     </div>
-	
+	<div class="backbtn" onclick="goBack(this)" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
 	<div id="MenuBar">
 		<nav class="BottomNav">
-			<div class="navbtn bHome" onclick="location.href='home.html'"></div>
-			<div class="navbtn bMap" onclick="location.href='map.html'"></div>
-			<div class="navbtn bSch" onclick="location.href='schedule.html'"></div>
-			<div class="navbtn bMatch" onclick="location.href='matchmaking.html'"></div>
-			<div class="navbtn bInfo" onclick="location.href='info.html'"></div>
+			<div class="navbtn bHome" onclick="location.href='home.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+			<div class="navbtn bMap" onclick="location.href='map.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+			<div class="navbtn bSch" onclick="location.href='schedule.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+			<div class="navbtn bMatch" onclick="location.href='matchmaking.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+			<div class="navbtn bInfo" onclick="location.href='info.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
         </nav>
 	</div>
 	
@@ -54,6 +49,10 @@
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mobile-events.min.js"></script>
+<script>
+function goBack(item){
+	window.history.back();
+}
 </script>
 </body>
 </html>
