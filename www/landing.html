@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/landing.css">
+    <title>SHIFT - Landing</title>
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+        ::-webkit-scrollbar {
+          display:none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="logo-container">
+        <svg id="8081377b-266f-431f-9163-8df18f3b111f" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357.07 94.17"><title>Shift Logo</title><path d="M-202.77-185.54l-13.63,45.13h-11.44l13.65-45.13H-242.5l-10.21,33.63H-271l10.21-33.63h-28.57l-13.27,45.13h-11.79l-13.7,45.12h29l9.52-32.36h18.31l-9.52,32.36h27.89l13.63-45.12h11.44l-13.69,45.12h27.37l5.38-18.31,8.19-26.81h11.13l13.63-45.13h-26.94Zm38,0-13.72,45.13h-11l-13.76,45.12h27.44l10-33.09h27.68l3.54-12h11.44l2.85-9.68h-28l3.5-11.9h51l-6.52,21.58h-11.84l-13.69,45.12h27.35l13.69-45.12h11.06L-66.93-162h23.34l7.14-23.54h-128.3Zm-202.13,27.21c-2.34,8-1.15,13.66,1.72,17.92H-376.6c7.43,11,26.13,12.35,24.49,17.92-0.88,3-4.21,5-8.39,5-4.85-.39-11.32-2.88-16.33-6.28-0.85-.65-1.88-0.26-2.66,1l-13.66,18.44a1.63,1.63,0,0,0,.35,2.35c5,5.23,15.51,8.63,26.5,8.63,20.14,0,37-11.64,42.15-29,2.36-8,1.17-13.77-1.73-18.05h11.44c-7.48-11.07-26.35-12.35-24.71-17.92,0.85-2.88,4-4.71,8.06-4.71,4.46,0.39,11.11,3.14,16.44,6.8,0.85,0.65,1.88.26,2.66-1l13.66-18.44a1.59,1.59,0,0,0-.35-2.35c-6.59-5.62-17.24-9.42-26.53-9.42-19.88,0-36.51,11.64-41.67,29.17" transform="translate(393.52 187.5)" fill="#fff"/></svg>
+      </div>
+      <div class="get-started">
+        <button id="get_started_button">Get Started</button>
+      </div>
+    </div>
+    <script>
+      document.getElementById("get_started_button").onclick = function () {
+          location.href = "home.html";
+      };
+      
+      if(localStorage.getItem("afterFirstLaunch")) {
+        window.location.replace("home.html");
+      }
+    </script>
+<!--    <script src="cordova.js"></script>           phantom library, needed for Cordova api calls, added during build -->
+<!--    <script src="js/app.js"></script>            recommended location of your JavaScript code relative to other JS files -->
+<!--    <script src="xdk/init-dev.js"></script>      normalizes device and document ready events, see README for details -->
+  </body>
+</html>

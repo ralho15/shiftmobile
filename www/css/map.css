@@ -1,25 +1,19 @@
-﻿.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    font-family: 'Glacial Indifference', Fallback, sans-serif;
-    font-size: 6vw;
-	color: #370c2c;
-	margin: 0.5vh 0;
-    text-align:center;
+﻿#map-head {
+	font-family: GlacialIndifferenceBold;
+	font-size: 1.4em;
+    text-transform: uppercase;
+	text-align: center;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	background-color: #f9f9f9;
+	border-bottom: 1px solid #ededed;
 }
-.h1, .h2, h1, h2{
-    font-family: 'Glacial Indifference', Fallback, sans-serif;
-    font-size: 7vw;
-    text-align:center;
-}
-.h5, h5 {
-	font-size: 4.5vw;
-}
-#paragraph p{
-	text-align: justify;
-	margin: 3vh 4vw;
-}
-.p, .span, .input, p, span, input, div {
-    font-family: 'Glacial Indifference', Fallback, sans-serif;
-    font-size: 3.5vw;
-    font-weight: 500;
-	color: #370c2c;
+
+#map-content {
+	width: 100%;
+	height: 620px;
+	background-image: url(../img/map-example.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }

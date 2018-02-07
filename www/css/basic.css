@@ -1,10 +1,132 @@
-@font-face {
-  font-family: 'GlacialIndifference';
-  src: url('../fonts/GlacialIndifference-Regular.otf') format('opentype');
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
+
+html {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
 ::-webkit-scrollbar {
-			display:none;
-		}
+    display:none;                               /* prevent srollbar from showing up */
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+    font-family: GlacialIndifferenceBold;
+    src: url(../font/GlacialIndifference-Bold.otf);
+}
+
+@font-face {
+    font-family: GlacialIndifferenceRegular;
+    src: url(../font/GlacialIndifference-Regular.otf);
+}
+
+@font-face {
+    font-family: GlacialIndifferenceItalic;
+    src: url(../font/GlacialIndifference-Italic.otf);
+}
+
+#task-bar{
+	position: fixed;
+	bottom:0;
+	left: 0;
+    width: 100%;
+	background-color: #f9f9f9;
+	border-top: 1px solid #ededed;
+}
+
+#task-buttons-container {
+	text-align: center;
+}
+
+.task-bar-buttons {
+	outline: none;
+	border: none;
+	background: none;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+	margin-top: 0.5em;
+	margin-bottom: 0.3em;
+	color: #777777;
+	fill: #777777;
+}
+
+svg {
+	height: 20px;
+}
+
+.task-svg-container {
+	width: 50px;
+}
+
+.task-text-container {
+	padding-top: 3px;
+	font-size: 12px;
+	font-family: GlacialIndifferenceRegular;
+}
+
+#task-bar-home {
+}
+
+#task-bar-map {
+}
+
+#task-bar-schedule {
+}
+
+#task-bar-matchmaking {
+}
+
+.active {
+	fill: #f09621;
+	color: #f09621;
+}
+
+@media only screen and (min-width: 320px) {
+	svg {
+		height: 18px;
+	}
+
+	.task-svg-container {
+		width: 40px;
+	}
+
+	.task-text-container {
+		font-size: 10px;
+	}
+}
+
+@media only screen and (min-width: 355px) {
+	svg {
+		height: 20px;
+	}
+
+	.task-svg-container {
+		width: 50px;
+	}
+
+	.task-text-container {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (min-width: 400px) {
+	.task-bar-buttons {
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+	}
+}
+
+/*
 #content{
 	position: absolute;
 	top:0;
@@ -15,20 +137,9 @@
     padding:0;
 	overflow: hidden;
 }
-#MenuBar{
-	position: fixed;
-	bottom:0;
-	left: 0;
-    width: 100vw;
-    min-height: 5vh;
-    margin:0;
-    padding:0;
-	overflow: hidden;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: gray;
-	background-color: white;
-}
+*/
+
+/*
 .backbtn{
 	position: absolute;
 	top:5px;
@@ -39,56 +150,10 @@
 	padding:0;
 	overflow:hidden;
 	border:none;
-	background:url(../img/icons/icons8-back-50.png);
+	background:url(../img/back.png);
 	background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
-.navbtn{
-	float: left;
-	background-color: gray;
-	bottom:0;
-    width: 20vw;
-    min-height: 7vh;
-    margin:0;
-    padding:0;
-	overflow: hidden;
-	text-align: center;
-}
-.bHome{
-	background:url(../img/icons/grid.svg);
-	background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-.bMap{
-	background:url(../img/icons/placeholder.svg);
-	background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-}
-.bSch{
-	background:url(../img/icons/small-calendar.svg);
-	background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-}
-.bMatch{
-	background:url(../img/icons8-contacts-50.png);
-	background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-}
-.bInfo{
-	background:url(../img/icons/info-button.svg);
-	background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-}
-html,
-body {
-    font-family: 'GlacialIndifference', Fallback, sans-serif;
-    min-height: 100%;
-    min-width: 100%;
-}
+*/
 
