@@ -196,16 +196,31 @@ div.highlightmenu {
 	.media-button {
 	  width: 4.9em;
 	}
+	
+	.recommend {
+	  margin-left: 1.03em;
+	  margin-right: 1.03em;
+	}
 }
 
 @media only screen and (min-width: 355px) {
 	.media-button {
 	  width: 5.7em;
 	}
+	
+	.recommend {
+	  margin-left: 1.4em;
+	  margin-right: 1.4em;
+	}
 }
 
 @media only screen and (min-width: 400px) {
 	.media-button {
 	  width: 6.3em;
+	}
+	
+	.recommend {
+	  margin-left: 1.6em;
+	  margin-right: 1.6em;
 	}
 }
