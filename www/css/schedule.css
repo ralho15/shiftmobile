@@ -1,12 +1,10 @@
 #schedule-head {
 	font-family: GlacialIndifferenceBold;
-	font-size: 1.4em;
+	font-size: 1.2em;
     text-transform: uppercase;
 	text-align: center;
 	padding-top: 0.8em;
-	padding-bottom: 0.8em;
-	background-color: #f9f9f9;
-	border-bottom: 1px solid #ededed;
+	padding-bottom: 0.5em;
 }
 
 #dealroom-svg {
