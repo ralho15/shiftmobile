@@ -157,7 +157,6 @@ div.highlightmenu {
   text-align: center;
   margin-top: 1em;
   margin-bottom: 4.5em;
-  box-shadow: ;
 }
 
 .media-button {
@@ -196,11 +195,13 @@ div.highlightmenu {
 	.media-button {
 	  width: 4.9em;
 	}
+}
 
 @media only screen and (min-width: 355px) {
 	.media-button {
 	  width: 5.7em;
 	}
+}
 
 @media only screen and (min-width: 400px) {
 	.media-button {
