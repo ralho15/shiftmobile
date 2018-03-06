@@ -1,79 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" href="css/basic.css">
-		<link rel="stylesheet" href="css/speaker.css">
-        <title>SHIFT</title>
-        <style>
-            /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
-            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
-            @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
-            @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
-        </style>
-    </head>
-    <body>
-        <div class="wrapper">
-            <div id="content">
-				<div class="speaker-info">
-					<div class="speaker-img">
-						<img id="speakerIMG"  alt="Avatar">
-					</div>
-					<h1 id="name"></h1>
-					<div id="position"></div>
-					<div class="speaker-desc">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						</div>
-				</div>
-            </div>
-            <div class="backbtn" onclick="goBack(this)" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='transparent'"></div>
-            <div id="MenuBar">
-                <nav class="BottomNav">
+
+<head>
+	<title>Event Page</title>
+	<meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<link rel="stylesheet" href="css/basic.css">
+	<link rel="stylesheet" href="css/event.css">
+  
+  <style>
+	@-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+    @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+
+  </style>
+</head>
+
+<body>
+	<div class="Top">
+	<br><br>
+	<div class="wrapper">
+		<div class="backbtn" onclick="goBack(this)" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='transparent'"></div>
+		</div>
+		<div class="Time">
+			<p align="center">10:45 - 11:15<br>Tuesday</p>
+		</div>
+	</div>
+	<!--<br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+
+	<div class="EventName">
+	<p id="mainstage">main stage</p><h2>Opening<br>event</h2>
+	</div>
+	<div class="Follow">
+	</div>
+	</div>
+	<div class="Bottom">
+	<br><br>
+		<h3>Speakers</h3>
+		<div class="Speakers">
+		<a href="Speaker.html"><img class="SpeakerPhoto" src="img/testspeaker.jpg"></a>
+		<a href="Speaker.html"><img class="SpeakerPhoto" src="img/testspeaker.jpg"></a>
+		<a href="Speaker.html"><img class="SpeakerPhoto" src="img/testspeaker.jpg"></a>
+		<a href="Speaker.html"><img class="SpeakerPhoto" src="img/testspeaker.jpg"></a>
+		<a href="Speaker.html"><img class="SpeakerPhoto" src="img/testspeaker.jpg"></a>
+		</div>
+		<h3>Details</h3>
+		<div class="Details">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+		   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+		   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+		   Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		   </p>
+		</div>
+	</div>
+	<div id="MenuBar">
+           <nav class="BottomNav">
                     <div class="task-bar-buttons" id="task-bar-home" onclick="location.href='home.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
                     <div class="task-bar-buttons" id="task-bar-map" onclick="location.href='map.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
                     <div class="task-bar-buttons" id="task-bar-schedule" onclick="location.href='schedule.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
                     <div class="task-bar-buttons" id="task-bar-matchmaking" onclick="location.href='matchmaking.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
                     <div class="task-bar-buttons" id="task-bar-info" onclick="location.href='info.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
-                </nav>
-            </div>
-        </div>
-        <script>
-            function goBack(item){
+            </nav>
+    </div>
+<script>
+	function goBack(item){
                 window.history.back();
-            }
-        </script>
-		<script>
-function receiveData( data ) {
-  // Do something with the data here.
-  console.log(data);
-  var myData = localStorage.getItem('objectToPass');
-  var index;
-  for (i = 0; i < data.length; i++) { 
-    if(myData == data[i].id)
-	{
-	index = i;
-	}
-}
-	console.log(index);
-  document.getElementById("name").innerHTML = data[index].title.rendered;
-  document.getElementById("speakerIMG").src = data[index].person_image;
-  document.getElementById("position").innerHTML = data[index].person_title;
-  // For demonstration purposes, we'll simply log it.
+				}
+
+function addEvent() {
+	
 }
 </script>
-<script src="http://theshift2017.pilot8.sofokus.com/wp-json/wp/v2/person/?_jsonp=receiveData"></script>
-
-<!--
-        <script src="cordova.js"></script>           phantom library, needed for Cordova api calls, added during build 
-        <script src="js/app.js"></script>            recommended location of your JavaScript code relative to other JS files 
-        <script src="xdk/init-dev.js"></script>      normalizes device and document ready events, see README for details 
-        <script src="js/jquery-3.1.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.mobile-events.min.js"></script>
--->
-		<div id="task-bar">
+<div id="task-bar">
 				<div id="task-buttons-container">
 					
 					<button class="task-bar-buttons active" id="task-bar-home" onclick="location.href='home.html'">
@@ -112,5 +111,6 @@ function receiveData( data ) {
 					</button>
 				</div>
             </div>
-    </body>
+</body>
+
 </html>
