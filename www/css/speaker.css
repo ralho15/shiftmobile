@@ -20,7 +20,9 @@
 
 .speaker-info p {
 	text-align: left;
-	margin: 25px;
+	margin-left: 10px;
+	margin-right: 10px;
+
 }
 
 .speaker-img{
@@ -35,4 +37,9 @@
 	background-position: center;
 	width:150px;
 	height:150px;
+}
+
+.speaker-desc {
+	margin-top: 30px;
+	margin-bottom: 70px;
 }

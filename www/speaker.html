@@ -24,7 +24,7 @@
 					<h1 id="name"></h1>
 					<div id="position"></div>
 					<div class="speaker-desc">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p id="speak-inf"></p>
 						</div>
 				</div>
             </div>
@@ -48,22 +48,31 @@
 function receiveData( data ) {
   // Do something with the data here.
   console.log(data);
-  var myData = localStorage.getItem('objectToPass');
+  //var myData = localStorage.getItem('speakerID');
+  var myData = 890;
+  console.log(myData);
   var index;
   for (i = 0; i < data.length; i++) { 
+  console.log(data[i].id);
     if(myData == data[i].id)
 	{
 	index = i;
+	break;
+	}
+	else
+	{
+		document.getElementById("speak-inf").innerHTML = "No speaker with given index";
 	}
 }
 	console.log(index);
   document.getElementById("name").innerHTML = data[index].title.rendered;
   document.getElementById("speakerIMG").src = data[index].person_image;
   document.getElementById("position").innerHTML = data[index].person_title;
+  document.getElementById("speak-inf").innerHTML = data[index].content.rendered;
   // For demonstration purposes, we'll simply log it.
 }
 </script>
-<script src="http://theshift2017.pilot8.sofokus.com/wp-json/wp/v2/person/?_jsonp=receiveData"></script>
+<script src="https://theshift.fi/wp-json/wp/v2/person/?_jsonp=receiveData"></script>
 
 <!--
         <script src="cordova.js"></script>           phantom library, needed for Cordova api calls, added during build 
@@ -76,7 +85,7 @@ function receiveData( data ) {
 		<div id="task-bar">
 				<div id="task-buttons-container">
 					
-					<button class="task-bar-buttons active" id="task-bar-home" onclick="location.href='home.html'">
+					<button class="task-bar-buttons inactive" id="task-bar-home" onclick="location.href='home.html'">
 						<div class="task-svg-container">
 							<svg id="home-svg-active" data-name="home-svg-active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476 476"><title>home-svg-active</title><path d="M3069.32,1299.83v121.53c0,24-19.64,44.93-43.64,44.93H2904.16c-24,0-43.84-20.93-43.84-44.93V1299.83c0-24,19.83-41.54,43.84-41.54h121.52C3049.68,1258.29,3069.32,1275.83,3069.32,1299.83Z" transform="translate(-2860.32 -1258.29)"/><rect x="267" width="209" height="209" rx="43.53" ry="43.53"/><path d="M3336.32,1567.19v121.52c0,24-19.28,45.58-43.28,45.58H3171.51c-24,0-44.19-21.57-44.19-45.58V1567.19c0-24,20.19-41.9,44.19-41.9H3293C3317,1525.29,3336.32,1543.19,3336.32,1567.19Z" transform="translate(-2860.32 -1258.29)"/><path d="M3069.32,1567.19v121.52c0,24-19.64,45.58-43.64,45.58H2904.16c-24,0-43.84-21.57-43.84-45.58V1567.19c0-24,19.83-41.9,43.84-41.9h121.52C3049.68,1525.29,3069.32,1543.19,3069.32,1567.19Z" transform="translate(-2860.32 -1258.29)"/></svg>
 						</div>

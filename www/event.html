@@ -23,13 +23,15 @@
 		<div class="backbtn" onclick="goBack(this)" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='transparent'"></div>
 		</div>
 		<div class="Time">
-			<p align="center">10:45 - 11:15<br>Tuesday</p>
+			<p align="left" id="day">Tuesday</p>
+			<p align="left" id="time">10:45 - 11:15</p>
+
 		</div>
 	</div>
 	<!--<br><br><br><br><br><br><br><br><br><br><br><br><br>-->
 
 	<div class="EventName">
-	<p id="mainstage">main stage</p><h2>Opening<br>event</h2>
+	<p id="stage">main stage</p><h2 id="event">Opening event</h2>
 	</div>
 	<div class="Follow">
 	</div>
@@ -37,16 +39,12 @@
 	<div class="Bottom">
 	<br><br>
 		<h3>Speakers</h3>
-		<div class="Speakers">
-		<a href="Speaker.html"><img class="SpeakerPhoto" src="img/testspeaker.jpg"></a>
-		<a href="Speaker.html"><img class="SpeakerPhoto" src="img/testspeaker.jpg"></a>
-		<a href="Speaker.html"><img class="SpeakerPhoto" src="img/testspeaker.jpg"></a>
-		<a href="Speaker.html"><img class="SpeakerPhoto" src="img/testspeaker.jpg"></a>
-		<a href="Speaker.html"><img class="SpeakerPhoto" src="img/testspeaker.jpg"></a>
+		<div class="Speakers" id="speakerList">
+
 		</div>
 		<h3>Details</h3>
 		<div class="Details">
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+		<p id="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 		   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 		   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 		   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -68,14 +66,61 @@
                 window.history.back();
 				}
 
-function addEvent() {
-	
+function receiveData(data) {
+	console.log(data);
+	//var myData = localStorage.getItem('eventID');
+	var myData = 559;
+	var index;
+	for (i = 0; i < data.length; i++) { 
+    if(myData == data[i].id)
+	{
+	index = i;
+	}
+	}
+	document.getElementById("stage").innerHTML = data[index].event_place.post_title;
+	document.getElementById("event").innerHTML = data[index].title.rendered;
+	document.getElementById("time").innerHTML = data[index].event_starts + " - " + "<br>" + data[index].event_ends;
+	if (data[index].event_day == "first"){
+	document.getElementById("day").innerHTML = "Tuesday";
+	}
+	else if (data[index].event_day == "second"){
+	document.getElementById("day").innerHTML = "Wednesday";
+	}
+	document.getElementById("content").innerHTML = data[index].content.rendered;
+	var xhReq = new XMLHttpRequest();
+	xhReq.open("GET", "http://theshift2017.pilot8.sofokus.com/wp-json/wp/v2/person", false);
+	xhReq.send(null);
+	var jsonObject = JSON.parse(xhReq.responseText);
+	console.log(jsonObject);
+	var createClickHandler = function(arg) {
+	return function() { goToSpeaker(arg); };
+	}
+	for	(l = 0; l < data[index].te_linked_persons.length; l++){
+		for (k = 0; k < jsonObject.length; k++){
+			if (data[index].te_linked_persons[l].ID == jsonObject[k].id){
+			var speakerID = jsonObject[k].id;
+			console.log(speakerID);
+			var para = document.createElement("img");
+			para.src = jsonObject[k].person_image;
+			para.className = 'SpeakerPhoto';
+			para.onclick = createClickHandler(speakerID);
+			var element = document.getElementById("speakerList");
+			element.appendChild(para);
+			}
+		}
+	}
+}
+function goToSpeaker(id){
+	localStorage.setItem( 'speakerID', id );
+	console.log(id);
+	window.location.href = 'Speaker.html'
 }
 </script>
+<script src="http://theshift2017.pilot8.sofokus.com/wp-json/wp/v2/timetable-event/?_jsonp=receiveData"></script>
 <div id="task-bar">
 				<div id="task-buttons-container">
 					
-					<button class="task-bar-buttons active" id="task-bar-home" onclick="location.href='home.html'">
+					<button class="task-bar-buttons inactive" id="task-bar-home" onclick="location.href='home.html'">
 						<div class="task-svg-container">
 							<svg id="home-svg-active" data-name="home-svg-active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476 476"><title>home-svg-active</title><path d="M3069.32,1299.83v121.53c0,24-19.64,44.93-43.64,44.93H2904.16c-24,0-43.84-20.93-43.84-44.93V1299.83c0-24,19.83-41.54,43.84-41.54h121.52C3049.68,1258.29,3069.32,1275.83,3069.32,1299.83Z" transform="translate(-2860.32 -1258.29)"/><rect x="267" width="209" height="209" rx="43.53" ry="43.53"/><path d="M3336.32,1567.19v121.52c0,24-19.28,45.58-43.28,45.58H3171.51c-24,0-44.19-21.57-44.19-45.58V1567.19c0-24,20.19-41.9,44.19-41.9H3293C3317,1525.29,3336.32,1543.19,3336.32,1567.19Z" transform="translate(-2860.32 -1258.29)"/><path d="M3069.32,1567.19v121.52c0,24-19.64,45.58-43.64,45.58H2904.16c-24,0-43.84-21.57-43.84-45.58V1567.19c0-24,19.83-41.9,43.84-41.9h121.52C3049.68,1525.29,3069.32,1543.19,3069.32,1567.19Z" transform="translate(-2860.32 -1258.29)"/></svg>
 						</div>
