@@ -28,8 +28,8 @@
         
           <div class="middle">
             <div class="title" id="highlights">Today's Highlights</div>
-            <div class="highlightmenu">
-                <button class="high_event" id="high_1">
+            <div class="highlightmenu" id="highmenu">
+                <!--<button class="high_event" id="high_1">
                         <div class="text_1">10:45 - 11:15</div>
                     <div class="stupidity">
                         <div class="text_2">main stage</div>
@@ -56,7 +56,7 @@
                         <div class="text_2">main stage</div>
                         <div class="text_3">Opening<br>Event</div>
                     </div>
-                </button>
+                </button>-->
             </div>
           </div>
       
@@ -135,7 +135,62 @@
   
     <script>
     	localStorage.setItem("afterFirstLaunch","true");
+
+		function receiveData(data){
+		console.log(data);
+		var firstDt = new Date("2018-05-22");
+		var thisDt = new Date(Date());
+		console.log(firstDt);
+		console.log(Date());
+		var day;
+		if(thisDt <= firstDt)
+		{
+			day = "first";
+		}
+		else{
+			day = "second";
+		}
+		var createClickHandler = function(arg) {
+		return function() { goToEvent(arg); };
+		}
+		for(i = 0; i < data.length; i++)
+			{
+			if(data[i].event_day == day)
+				{
+				console.log("test");
+				var para = document.createElement("button");
+				para.className = 'high_event';
+				para.onclick = createClickHandler(data[i].id);
+				var text1 = document.createElement("div")
+				var textStu = document.createElement("div")
+				var text2 = document.createElement("div")
+				var text3 = document.createElement("div")
+				text1.className = 'text_1';
+				textStu.className = 'stupidity';
+				text2.className = 'text_2';
+				text3.innerHTML = data[i].title.rendered;
+				text3.className = 'text_3';
+				var eventTime = data[i].event_starts + " - " + data[i].event_ends;
+				text1.innerHTML = eventTime.replace(/[^0-9.:-]/g, ' ');
+				text2.innerHTML = data[i].event_place.post_title;
+				para.appendChild(text1);
+				textStu.appendChild(text2);
+				textStu.appendChild(text3);
+				para.appendChild(textStu);
+				var element = document.getElementById("highmenu");
+				element.appendChild(para);
+				}
+			}
+		}
+		
+		function goToEvent(id){
+		localStorage.setItem( 'eventID', id );
+		console.log(id);
+		window.location.href = 'event.html'
+		}
+		
     </script>
+	<script src="http://theshift2017.pilot8.sofokus.com/wp-json/wp/v2/timetable-event/?_jsonp=receiveData"></script>
     <!--
         <script src="cordova.js"></script>           phantom library, needed for Cordova api calls, added during build 
         <script src="js/app.js"></script>            recommended location of your JavaScript code relative to other JS files 

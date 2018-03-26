@@ -58,31 +58,17 @@ div.highlightmenu {
 .high_event{
   padding: 0;
   border: 0;
-  margin: 0px 3px 0px 9px;
+  margin: 0px 6px 0px 6px;
   height: 150px;
   width: 240px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   font-family: GlacialIndifferenceRegular;
-}
-
-#high_1 {
-  background-image: url('../img/house.jpg');
-  margin-left: 17px;
-}
-
-#high_2 {
   background-image: url('../img/house.jpg');
 }
 
-#high_3 {
-  background-image: url('../img/house.jpg');
-}
 
-#high_4 {
-  background-image: url('../img/house.jpg');
-}
 
 .text_1 {
   font-family: GlacialIndifferenceRegular;
@@ -107,8 +93,10 @@ div.highlightmenu {
   color: white;
 }
 .text_3{
-  font-size: 20px;
+  font-size: 16px;
   color: white;
+  width: auto;
+  margin: 0px;
 }
 
 .stupidity {
@@ -118,10 +106,10 @@ div.highlightmenu {
   margin-top: 80px;
   margin-left: 10px;
   width: 120px;
-  line-height: 1.2;
   position: relative;
   bottom: 10px;
-  left: 9px;
+  left: 0px;
+
 }
 
 .title{

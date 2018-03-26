@@ -41,9 +41,10 @@ h3{
 .Top{
 	background: url(../img/house.jpg);
 	background-position: center;
-	background-size: 650px;
+	background-size: cover;
+	background-repeat: no-repeat;
 	color: White;
-	height: 50vh;
+	height: 40vh;
 	position: relative;
 	text-align: center;
 	color: white;
@@ -70,7 +71,7 @@ h3{
 	float: left;
 	margin-left: 5%;
 	position: absolute;
-	top: 40vh;	
+	top: 30vh;	
 	color: white;
 }
 #stage{

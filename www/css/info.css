@@ -24,6 +24,10 @@
 	margin-top: 0;
 }
 
+.container{
+margin-bottom:70px;
+}
+
 
 #info-about {
 	float: left;
@@ -45,6 +49,10 @@
 
 #ticket-text {
 	text-align: center;
+}
+
+ul li{
+	font-family: GlacialIndifferenceRegular;
 }
 
 /*
