@@ -23,15 +23,15 @@
 		<div class="backbtn" onclick="goBack(this)" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='transparent'"></div>
 		</div>
 		<div class="Time">
-			<p align="left" id="day">Tuesday</p>
-			<p align="left" id="time">10:45 - 11:15</p>
+			<p align="left" id="day"></p>
+			<p align="left" id="time"></p>
 
 		</div>
 	</div>
 	<!--<br><br><br><br><br><br><br><br><br><br><br><br><br>-->
 
 	<div class="EventName">
-	<p id="stage">main stage</p><h2 id="event">Opening event</h2>
+	<p id="stage"></p><h2 id="event"></h2>
 	</div>
 	<div class="Follow">
 	</div>
@@ -44,12 +44,7 @@
 		</div>
 		<h3>Details</h3>
 		<div class="Details">
-		<p id="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-		   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-		   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-		   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-		   Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		   </p>
+		<p id="content"></p>
 		</div>
 	</div>
 	<div id="MenuBar">
@@ -79,7 +74,8 @@ function receiveData(data) {
 	}
 	document.getElementById("stage").innerHTML = data[index].event_place.post_title;
 	document.getElementById("event").innerHTML = data[index].title.rendered;
-	document.getElementById("time").innerHTML = data[index].event_starts + " - " + "<br>" + data[index].event_ends;
+	var eventTime = data[index].event_starts + " - " + data[index].event_ends;
+	document.getElementById("time").innerHTML = eventTime.replace(/[^0-9.:-]/g, ' ');
 	if (data[index].event_day == "first"){
 	document.getElementById("day").innerHTML = "Tuesday";
 	}
