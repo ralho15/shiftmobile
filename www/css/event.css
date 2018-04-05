@@ -49,12 +49,12 @@ h3{
 	text-align: center;
 	color: white;
 }
-	
+
 .backbtn{
 	float: left;
 	margin-left: 5%;
 	position: absolute;
-	top: 16px;
+	top: 10px;
 }
 
 .Time{
@@ -64,14 +64,14 @@ h3{
 	position: absolute;
 	top: 2%;
 	right: 1px;
-	
+
 }
-	
+
 .EventName{
 	float: left;
 	margin-left: 5%;
 	position: absolute;
-	top: 30vh;	
+	top: 30vh;
 	color: white;
 }
 #stage{
@@ -81,11 +81,11 @@ h3{
 #event{
 	margin: 0;
 }
-	
+
 .Details{
 	position: absolute;
 }
-	
+
 .Bottom{
 
 }
@@ -96,12 +96,12 @@ margin-left:20px;
 margin-right:20px;
 }
 
-	
+
 .Speakers{
 	margin: 4% 5% 4% 3%;
 	text-align: left;
 }
-	
+
 .SpeakerPhoto{
 	padding: 3px;
 	background-image:url('../img/test_background_speaker.jpg');
