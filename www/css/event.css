@@ -1,0 +1,114 @@
+html,
+body {
+    font-family: GlacialIndifferenceRegular;
+    min-height: 100vh;
+    min-width: 100%;
+    overflow: auto;
+}
+.h1, .h3, .h4, .h5, .h6, h1, h3, h4, h5, h6 {
+    font-family: GlacialIndifferenceRegular;
+    font-size: 6vw;
+	margin: 0.5vh 0;
+}
+.h1, h1, {
+    font-family: GlacialIndifferenceRegular;
+    font-size: 7vw;
+}
+#mainstage {
+	font-family: GlacialIndifferenceRegular;
+	font-size: 3vh;
+}
+.h2 {
+	font-family: GlacialIndifferenceBold;
+	font-size: 4vh;
+}
+
+h3{
+	margin-left:20px;
+}
+.h5, h5 {
+	font-size: 4.5vw;
+}
+#paragraph p{
+	text-align: justify;
+	margin: 3vh 4vw;
+}
+.p, .span, .input, p, span, input, div {
+	font-family: GlacialIndifferenceRegular;
+    font-size: 16px;
+    font-weight: 500;
+}
+.Top{
+	background: url(../img/house.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: White;
+	height: 40vh;
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+.backbtn{
+	float: left;
+	margin-left: 5%;
+	position: absolute;
+	top: 10px;
+}
+
+.Time{
+	float: right;
+	width: 100px;
+	margin-right: 0;
+	position: absolute;
+	top: 2%;
+	right: 1px;
+
+}
+
+.EventName{
+	float: left;
+	margin-left: 5%;
+	position: absolute;
+	top: 30vh;
+	color: white;
+}
+#stage{
+	margin: 0;
+}
+
+#event{
+	margin: 0;
+}
+
+.Details{
+	position: absolute;
+}
+
+.Bottom{
+
+}
+
+.Details{
+padding-bottom: 70px;
+margin-left:20px;
+margin-right:20px;
+}
+
+
+.Speakers{
+	margin: 4% 5% 4% 3%;
+	text-align: left;
+}
+
+.SpeakerPhoto{
+	padding: 3px;
+	background-image:url('../img/test_background_speaker.jpg');
+	background-position: center;
+	text-align: center;
+	border-radius: 50%;
+	height:	50px;
+	width: 50px;
+	margin: 1%;
+}

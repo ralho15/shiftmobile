@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="css/basic.css">
+		<link rel="stylesheet" href="css/speaker.css">
+        <title>SHIFT</title>
+        <style>
+            /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+            @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+            @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="content">
+				<div class="speaker-info">
+					<div class="speaker-img">
+						<img id="speakerIMG"  alt="Avatar">
+					</div>
+					<h1 id="name"></h1>
+					<div id="position"></div>
+					<div class="speaker-desc">
+						<p id="speak-inf"></p>
+						</div>
+				</div>
+            </div>
+            <div class="backbtn" onclick="goBack(this)" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='transparent'"></div>
+            <div id="MenuBar">
+                <nav class="BottomNav">
+                    <div class="task-bar-buttons" id="task-bar-home" onclick="location.href='home.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+                    <div class="task-bar-buttons" id="task-bar-map" onclick="location.href='map.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+                    <div class="task-bar-buttons" id="task-bar-schedule" onclick="location.href='schedule.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+                    <div class="task-bar-buttons" id="task-bar-matchmaking" onclick="location.href='matchmaking.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+                    <div class="task-bar-buttons" id="task-bar-info" onclick="location.href='info.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+                </nav>
+            </div>
+        </div>
+        <script>
+            function goBack(item){
+                window.history.back();
+            }
+        </script>
+		<script>
+function receiveData( data ) {
+  // Do something with the data here.
+  console.log(data);
+  var myData = localStorage.getItem('speakerID');
+  //var myData = 890;
+  console.log(myData);
+  var index;
+  for (i = 0; i < data.length; i++) { 
+  console.log(data[i].id);
+    if(myData == data[i].id)
+	{
+	index = i;
+	break;
+	}
+	else
+	{
+		document.getElementById("speak-inf").innerHTML = "No speaker with given index";
+	}
+}
+	console.log(index);
+  document.getElementById("name").innerHTML = data[index].title.rendered;
+  document.getElementById("speakerIMG").src = data[index].person_image;
+  document.getElementById("position").innerHTML = data[index].person_title;
+  document.getElementById("speak-inf").innerHTML = data[index].content.rendered;
+  // For demonstration purposes, we'll simply log it.
+}
+</script>
+<script src="https://theshift.fi/wp-json/wp/v2/person/?_jsonp=receiveData"></script>
+
+<!--
+        <script src="cordova.js"></script>           phantom library, needed for Cordova api calls, added during build 
+        <script src="js/app.js"></script>            recommended location of your JavaScript code relative to other JS files 
+        <script src="xdk/init-dev.js"></script>      normalizes device and document ready events, see README for details 
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mobile-events.min.js"></script>
+-->
+		<div id="task-bar">
+				<div id="task-buttons-container">
+					
+					<button class="task-bar-buttons inactive" id="task-bar-home" onclick="location.href='home.html'">
+						<div class="task-svg-container">
+							<svg id="home-svg-active" data-name="home-svg-active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476 476"><title>home-svg-active</title><path d="M3069.32,1299.83v121.53c0,24-19.64,44.93-43.64,44.93H2904.16c-24,0-43.84-20.93-43.84-44.93V1299.83c0-24,19.83-41.54,43.84-41.54h121.52C3049.68,1258.29,3069.32,1275.83,3069.32,1299.83Z" transform="translate(-2860.32 -1258.29)"/><rect x="267" width="209" height="209" rx="43.53" ry="43.53"/><path d="M3336.32,1567.19v121.52c0,24-19.28,45.58-43.28,45.58H3171.51c-24,0-44.19-21.57-44.19-45.58V1567.19c0-24,20.19-41.9,44.19-41.9H3293C3317,1525.29,3336.32,1543.19,3336.32,1567.19Z" transform="translate(-2860.32 -1258.29)"/><path d="M3069.32,1567.19v121.52c0,24-19.64,45.58-43.64,45.58H2904.16c-24,0-43.84-21.57-43.84-45.58V1567.19c0-24,19.83-41.9,43.84-41.9h121.52C3049.68,1525.29,3069.32,1543.19,3069.32,1567.19Z" transform="translate(-2860.32 -1258.29)"/></svg>
+						</div>
+						<div class="task-text-container">Home</div>
+					</button>
+
+					<button class="task-bar-buttons" id="task-bar-map" onclick="location.href='map.html'">
+						<div class="task-svg-container">
+							<svg id="map-svg-inactive" data-name="map-svg-inactive" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382.6 477"><title>map-svg-inactive</title><path d="M5119.14,1988.79c-105.4,0-191.2,85.8-191.2,191.2a188.19,188.19,0,0,0,3.4,35.9c0.1,0.7.5,2.8,1.3,6.4a188.3,188.3,0,0,0,12.8,37.7c20.6,48.5,65.9,123,165.3,202.8a13.54,13.54,0,0,0,17,0c99.3-79.8,144.7-154.3,165.3-202.8a186.19,186.19,0,0,0,12.8-37.7c0.8-3.6,1.2-5.7,1.3-6.4a196.63,196.63,0,0,0,3.4-35.9C5310.34,2074.59,5224.54,1988.79,5119.14,1988.79Zm161.2,222.4c0,0.2-.1.4-0.1,0.6-0.1.5-.4,2-0.9,4.3v0.2a158.75,158.75,0,0,1-11.1,32.6c-0.1.1-.1,0.3-0.2,0.4-18.7,44.3-59.7,111.9-148.9,185.6-89.2-73.7-130.2-141.3-148.9-185.6-0.1-.1-0.1-0.3-0.2-0.4a169.35,169.35,0,0,1-11.1-32.6v-0.2c-0.6-2.3-.8-3.8-0.9-4.3,0-.2-0.1-0.4-0.1-0.7a163.31,163.31,0,0,1-3-31.2c0-90.5,73.7-164.2,164.2-164.2s164.2,73.7,164.2,164.2A162.8,162.8,0,0,1,5280.34,2211.19Z" transform="translate(-4927.94 -1988.79)"/><path d="M5119.14,2060.69c-66.9,0-121.4,54.5-121.4,121.4s54.5,121.4,121.4,121.4,121.4-54.5,121.4-121.4S5186,2060.69,5119.14,2060.69Zm0,215.8a94.4,94.4,0,1,1,94.4-94.4A94.51,94.51,0,0,1,5119.14,2276.49Z" transform="translate(-4927.94 -1988.79)"/></svg>
+						</div>
+						<div class="task-text-container">Map</div>
+					</button>
+
+					<button class="task-bar-buttons" id="task-bar-schedule" onclick="location.href='schedule.html'">
+						<div class="task-svg-container">
+							<svg id="schedule-svg-inactive" data-name="schedule-svg-inactive" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 477 477"><title>schedule-svg-inactive</title><path d="M7653.56,2033.51H7589v-29.81a14.91,14.91,0,0,0-29.81,0v29.81H7469.7v-29.81a14.91,14.91,0,0,0-29.81,0v29.81h-89.44v-29.81a14.91,14.91,0,0,0-29.81,0v29.81h-64.59a39.74,39.74,0,0,0-39.75,39.74V2426a39.75,39.75,0,0,0,39.75,39.75h397.5A39.74,39.74,0,0,0,7693.3,2426V2073.25A39.73,39.73,0,0,0,7653.56,2033.51Zm9.93,392.53a10,10,0,0,1-9.93,9.94h-397.5a10,10,0,0,1-9.94-9.94V2073.25a10,10,0,0,1,9.94-9.93h64.59v29.81a14.91,14.91,0,1,0,29.81,0v-29.81h89.44v29.81a14.91,14.91,0,1,0,29.81,0v-29.81h89.44v29.81a14.91,14.91,0,1,0,29.81,0v-29.81h64.6a9.94,9.94,0,0,1,9.93,9.93V2426Z" transform="translate(-7216.3 -1988.79)"/><rect x="104.34" y="178.88" width="59.63" height="44.72"/><rect x="104.34" y="253.41" width="59.63" height="44.72"/><rect x="104.34" y="327.94" width="59.63" height="44.72"/><rect x="208.69" y="327.94" width="59.63" height="44.72"/><rect x="208.69" y="253.41" width="59.63" height="44.72"/><rect x="208.69" y="178.88" width="59.63" height="44.72"/><rect x="313.03" y="327.94" width="59.63" height="44.72"/><rect x="313.03" y="253.41" width="59.63" height="44.72"/><rect x="313.03" y="178.88" width="59.63" height="44.72"/></svg>
+						</div>
+						<div class="task-text-container">Schedule</div>
+					</button>
+
+					<button class="task-bar-buttons" id="task-bar-matchmaking" onclick="location.href='match.html'">
+						<div class="task-svg-container">
+							<svg id="matchmaking-svg-inactive" data-name="matchmaking-svg-inactive" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 502.19 478.86"><title>matchmaking-svg-inactive</title><path d="M9838,2466.22a12.81,12.81,0,0,1-7.52-2.44l-139.73-101.23L9551,2463.78a12.83,12.83,0,0,1-19.73-14.33l53.1-164.18-139.46-101.61a12.82,12.82,0,0,1,7.53-23.19l172.55-.23,53.54-164a12.82,12.82,0,0,1,24.38,0l53.54,164,172.55,0.23a12.82,12.82,0,0,1,7.53,23.19l-139.46,101.61,53.1,164.18A12.83,12.83,0,0,1,9838,2466.22Zm-147.26-132.33a12.81,12.81,0,0,1,7.52,2.44L9813.71,2420l-43.87-135.63a12.82,12.82,0,0,1,4.65-14.31l115.21-83.95-142.55-.19A12.82,12.82,0,0,1,9735,2177l-44.23-135.52L9646.51,2177a12.82,12.82,0,0,1-12.17,8.84l-142.55.19L9607,2270a12.82,12.82,0,0,1,4.65,14.31L9567.78,2420l115.44-83.63A12.81,12.81,0,0,1,9690.75,2333.88Z" transform="translate(-9439.65 -1987.36)"/></svg>
+						</div>
+						<div class="task-text-container">Match</div>
+					</button>
+
+					<button class="task-bar-buttons" id="task-bar-info" onclick="location.href='info.html'">
+						<div class="task-svg-container">
+							<svg id="info-svg-inactive" data-name="info-svg-inactive" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136.54 478.86"><title>info-svg-inactive</title><path d="M11957.32,2466.72h-112.94V2147h112.94v319.69Zm-88.62-24.33H11933v-271h-64.29v271Z" transform="translate(-11832.58 -1987.86)"/><path d="M11900.85,2124.39a68.27,68.27,0,1,1,68.27-68.27A68.35,68.35,0,0,1,11900.85,2124.39Zm0-112.21a43.94,43.94,0,1,0,43.94,43.94A44,44,0,0,0,11900.85,2012.18Z" transform="translate(-11832.58 -1987.86)"/></svg>
+						</div>
+						<div class="task-text-container">Info</div>
+					</button>
+				</div>
+            </div>
+    </body>
+</html>

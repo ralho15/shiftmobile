@@ -1,0 +1,214 @@
+.top {
+  margin: 0;
+  height: 200px;
+  background-image: url('../img/Shift.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.whole-shit {
+  width: 194px;
+  display: block;
+  padding-top: 34px;
+  padding-left: 30px;
+}
+
+.welcome {
+  font-size: 32px;
+/*
+  background: -webkit-linear-gradient(-45deg, #f69320, #ea4491, #a02167);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+*/
+  font-family: GlacialIndifferenceBold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: white;
+  text-align: left;
+  padding-left: 10px; 
+  margin-bottom: 10px;
+}
+
+#slogan{
+  width: 200px;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+/*
+#line-1{
+  width: 165px;
+}
+
+#line-2{
+  width: 140px;
+}
+
+#line-3{
+  width: 156px;
+}
+*/
+
+div.highlightmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.high_event{
+  padding: 0;
+  border: 0;
+  margin: 0px 6px 0px 6px;
+  height: 150px;
+  width: 240px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: GlacialIndifferenceRegular;
+  background-image: url('../img/house.jpg');
+}
+
+
+
+.text_1 {
+  font-family: GlacialIndifferenceRegular;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  display: block;
+  float: right;
+  width: 100px;
+  height: 25px;
+  padding-left: 2px;
+  background-color: white;
+  margin-top: 0px;
+  padding-top: 6px;
+  background: linear-gradient(-45deg, #f69320, #ea4491, #a02167);
+  position: relative;
+  bottom: 5px;
+}
+
+.text_2{
+  color: white;
+}
+.text_3{
+  font-size: 16px;
+  color: white;
+  width: auto;
+  margin: 0px;
+}
+
+.stupidity {
+  display: block;
+  text-align: left;
+  float: left middle;
+  margin-top: 80px;
+  margin-left: 10px;
+  width: 120px;
+  position: relative;
+  bottom: 10px;
+  left: 0px;
+
+}
+
+.title{
+  padding-top: 10px;
+  padding-left: 17px;
+  font-size: 15px;
+  padding-bottom: 6px;
+  padding-top: 15px;
+  color:dimgray;
+  font-family: GlacialIndifferenceBold;
+  letter-spacing: 0.3px;
+}
+
+
+
+/*
+.event_text{
+  height: 180px;
+  width: 200px;
+  float: right;
+  overflow: auto;
+  text-align: left;
+  font-family: GlacialIndifferenceBold;
+}
+*/
+
+.recommend{
+  height: 26em;
+  overflow: scroll;
+  padding-bottom: 0px;
+}
+
+.media-buttons-container {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 4.5em;
+}
+
+.media-button {
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0 -0.1em;
+  background-color: #f09621;
+  width: 6em;
+}
+
+.social-svg{
+  height: 1em;
+  padding-top: 5.5px;
+  padding-bottom: 2px;
+}
+
+#twitter {
+  
+}
+
+#linkedIn {
+  
+}
+
+#facebook {
+
+}
+
+#instagram {
+
+}
+
+@media only screen and (min-width: 320px) {
+	.media-button {
+	  width: 4.9em;
+	}
+	
+	.recommend {
+	  margin-left: 1.03em;
+	  margin-right: 1.03em;
+	}
+}
+
+@media only screen and (min-width: 355px) {
+	.media-button {
+	  width: 5.7em;
+	}
+	
+	.recommend {
+	  margin-left: 1.4em;
+	  margin-right: 1.4em;
+	}
+}
+
+@media only screen and (min-width: 400px) {
+	.media-button {
+	  width: 6.3em;
+	}
+	
+	.recommend {
+	  margin-left: 1.6em;
+	  margin-right: 1.6em;
+	}
+}

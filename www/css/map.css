@@ -1,0 +1,17 @@
+﻿#map-head {
+	font-family: GlacialIndifferenceBold;
+	font-size: 1.2em;
+    text-transform: uppercase;
+	text-align: center;
+	padding-top: 0.8em;
+	padding-bottom: 0.5em;
+}
+
+#map-content {
+	width: 100%;
+	height: 640px;
+	background-image: url(../img/map-example.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}

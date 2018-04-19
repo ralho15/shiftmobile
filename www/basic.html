@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="css/basic.css">
+        <title>SHIFT</title>
+        <style>
+            /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+            @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+            @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="content">
+            </div>
+<!--            <div class="backbtn" onclick="goBack(this)" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>-->
+            <div id="MenuBar">
+                <nav class="BottomNav">
+                    <div class="task-bar-buttons" id="task-bar-home" onclick="location.href='home.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+                    <div class="task-bar-buttons" id="task-bar-map" onclick="location.href='map.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+                    <div class="task-bar-buttons" id="task-bar-schedule" onclick="location.href='schedule.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+                    <div class="task-bar-buttons" id="task-bar-matchmaking" onclick="location.href='matchmaking.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+                    <div class="task-bar-buttons" id="task-bar-info" onclick="location.href='info.html'" ontouchstart="this.style.backgroundColor='gray'" ontouchend="this.style.backgroundColor='white'"></div>
+                </nav>
+            </div>
+        </div>
+        <script>
+            function goBack(item){
+                window.history.back();
+            }
+        </script>
+<!--
+        <script src="cordova.js"></script>           phantom library, needed for Cordova api calls, added during build 
+        <script src="js/app.js"></script>            recommended location of your JavaScript code relative to other JS files 
+        <script src="xdk/init-dev.js"></script>      normalizes device and document ready events, see README for details 
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mobile-events.min.js"></script>
+-->
+    </body>
+</html>

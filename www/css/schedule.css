@@ -1,0 +1,25 @@
+#schedule-head {
+	font-family: GlacialIndifferenceBold;
+	font-size: 1.2em;
+    text-transform: uppercase;
+	text-align: center;
+	padding-top: 0.8em;
+	padding-bottom: 0.5em;
+}
+
+#dealroom-svg {
+	height: 2.4em;
+}
+
+#dealroom-button {
+	width: 227.325px;
+    height: 38.4px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -118.6625px;
+    margin-top: -19.2px;
+	outline: none;
+	border: none;
+	background: none;
+}

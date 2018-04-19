@@ -1,0 +1,64 @@
+#info-head {
+	font-family: GlacialIndifferenceBold;
+	font-size: 1.2em;
+    text-transform: uppercase;
+	text-align: center;
+	padding-top: 0.8em;
+	padding-bottom: 0.5em;
+}
+
+.infoButton {
+	outline: none;
+  	border: none;
+  	background: none;
+	font-family: GlacialIndifferenceBold;
+	font-size: 1em;
+	color: #D8D8D8;
+	width: 50%;
+	text-align: center;
+	border: white;
+	border-bottom: 0.3em solid #E8E8E8;
+	padding-bottom: 0.4em;
+	margin-bottom: 1.4em;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.container{
+margin-bottom:70px;
+}
+
+
+#info-about {
+	float: left;
+	border-bottom: 0.3em solid #FFA500;
+	color: #FFA500;
+}
+
+#info-ticket {
+	float: right;
+}
+
+
+#infoText {
+	font-family: GlacialIndifferenceRegular;
+	font-size: 1em;
+	text-align: left;
+	margin: 0 1.5em;
+}
+
+#ticket-text {
+	text-align: center;
+}
+
+ul li{
+	font-family: GlacialIndifferenceRegular;
+}
+
+/*
+.infoButton:active,
+.infoButton:focus {
+	border-bottom: 4px solid #FFA500;
+	color: black;
+}
+*/
